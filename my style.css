@@ -1,0 +1,144 @@
+ /* ── Reset & Base Styles ─────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;  /* include padding & border in width calculations */
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --blue:    #1A56DB;
+  --dark:    #111827;
+  --gray:    #6B7280;
+  --light:   #F3F4F6;
+  --white:   #ffffff;
+  --radius:  10px;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--dark);
+  background-color: var(--light);
+}
+
+/* ── Layout ──────────────────────────────────── */
+header, main, footer {
+  max-width: 800px;
+  margin: 0 auto;         /* center horizontally */
+  padding: 0 24px;        /* side padding for small screens */
+}
+
+/* ── Header ──────────────────────────────────── */
+header {
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 40px 24px;
+  text-align: center;
+  max-width: 100%;        /* override the 800px for full-width header */
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+}
+/* ── Main Content ────────────────────────────── */
+main { padding-top: 40px; padding-bottom: 60px; }
+
+h2 {
+  font-size: 1.5rem;
+  color: var(--blue);
+  margin-top: 32px;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--blue);
+}
+
+p { margin-bottom: 16px; }
+
+/* ── Profile Image ───────────────────────────── */
+img {
+  display: block;
+  border-radius: 50%;     /* circular crop */
+  border: 4px solid var(--white);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  margin: 20px auto;
+}
+
+/* ── Lists ───────────────────────────────────── */
+ul, ol {
+  padding-left: 24px;
+  margin-bottom: 16px;
+}
+
+li { margin-bottom: 6px; }
+
+/* ── Table ───────────────────────────────────── */
+table {
+  width: 100%;
+  border-collapse: collapse;  /* merge adjacent borders into one */
+  margin: 20px 0;
+}
+
+th, td {
+  padding: 12px 16px;
+  text-align: left;
+  border: 1px solid #000000;
+}
+
+th { background-color: var(--blue); color: white; }
+tr:nth-child(even) { background-color: #fbf9fb; }
+tr:hover           { background-color: purple;color: white; }
+
+/* ── Form ────────────────────────────────────── */
+form { max-width: 500px; }
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 4px;
+  margin-top: 16px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 2px solid purple;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-family: inherit;     /* inputs don't inherit font by default */
+  transition: border-color 0.2s;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(26,86,219,0.2);
+}
+
+button[type="submit"] {
+  margin-top: 20px;
+  background: var(--blue);
+  color:purple;
+  border: none;
+  padding: 12px 28px;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+button[type="submit"]:hover  { background: #1648BF; }
+button[type="submit"]:active { transform: scale(0.98); }
+
+/* ── Footer ──────────────────────────────────── */
+footer {
+  background: var(--dark);
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+  padding: 24px;
+  font-size: 0.9rem;
+  max-width: 100%;
+}
